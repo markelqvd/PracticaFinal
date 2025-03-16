@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public TextMeshProUGUI scoreText; // Referencia al texto
     private int score = 0; // Puntos iniciales
+    public AudioSource hitSound;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class ScoreManager : MonoBehaviour
     void AddPoint()
     {
         score += 10; // Sumar 10 puntos por obstáculo destruido
+        hitSound.Play();
         UpdateScoreText();
     }
 
